@@ -34,7 +34,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- JBoss dependency versions -->
-        <version.wildfly.maven.plugin>3.0.0.Final</version.wildfly.maven.plugin>
+        <version.wildfly.maven.plugin>5.0.0.Final</version.wildfly.maven.plugin>
 
         <!-- Define the version of the JBoss BOMs we want to import to specify tested stacks. -->
         <version.jboss.bom>27.0.1.Final</version.jboss.bom>
@@ -211,6 +211,11 @@
                 <groupId>org.wildfly.plugins</groupId>
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>${version.wildfly.maven.plugin}</version>
+                <configuration>
+                    <debug>true</debug>
+                    <server-args><server-arg>-Djboss.http.port=8090</server-arg></server-args>
+                </configuration>
+
             </plugin>
         </plugins>
     </build>
