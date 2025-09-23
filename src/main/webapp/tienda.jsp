@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" %>
+<%@ page language="java" import="es.tew.Counter"%> 
 
     <html>
 
@@ -65,8 +66,7 @@
                         <% } %>
 
                             <br>
-                            <% Integer contador=(Integer)application.getAttribute("contador"); if ( contador==null ){
-                                contador=0; } contador++; application.setAttribute("contador", contador); %>
-                                <%=contador%> visitas
+                            <jsp:useBean id="contador" class="es.tew.Counter" scope="application"/>
+                            <jsp:getProperty property="incrementedValue" name="contador"/>
     </body>
     <html>
