@@ -63,5 +63,10 @@
                 %>
                 <br>Del producto <%=elemento%>, <%=(Integer)carrito.get(elemento)%> unidades.
                         <% } %>
+
+                            <br>
+                            <% Integer contador=(Integer)application.getAttribute("contador"); if ( contador==null ){
+                                contador=0; } contador++; application.setAttribute("contador", contador); %>
+                                <%=contador%> visitas
     </body>
     <html>
