@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+    {
+    "type": "java",
+    "name": "Debug (Attach)",
+    "projectName": "gestioneitor",
+    "request": "attach",
+    "hostName": "127.0.0.1",
+    "port": "8787"
+    }
+    ]
+}
