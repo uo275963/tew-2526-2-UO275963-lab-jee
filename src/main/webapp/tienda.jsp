@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" %>
 <%@ page language="java" import="es.tew.Counter"%> 
+<%@ taglib uri="jakarta.tags.core" prefix="c" %>
 
     <html>
 
@@ -57,13 +58,13 @@
         <br>
         <H2>Carrito de la compra</h2>
         <br>
-        <% Set<String> productos = carrito.keySet();
-            Iterator<String> iter = productos.iterator();
-                while ( iter.hasNext() ) {
-                String elemento = (String)iter.next();
-                %>
-                <br>Del producto <%=elemento%>, <%=(Integer)carrito.get(elemento)%> unidades.
-                        <% } %>
+        <ul>
+            <c:forEach var="entry" items="${carrito}">
+                <li>
+                    <c:out value="Del producto ${entry.key}, ${entry.value} unidades"/>
+                </li>
+            </c:forEach>
+        </ul> 
 
                           
     </body>
