@@ -13,4 +13,13 @@
             <h1>Bienvenido a mi primera página web!</h1>
 </body>
 
+
+<br>
+<%@ page language="java" import="es.tew.Counter"%> 
+
+jsp:useBean id="contador" class="es.tew.Counter" scope="application"/>
+<jsp:getProperty property="incrementedValue" name="contador"/>
+<%=contador%> visitas
+
+
 </html>

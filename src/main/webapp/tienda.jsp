@@ -65,8 +65,6 @@
                 <br>Del producto <%=elemento%>, <%=(Integer)carrito.get(elemento)%> unidades.
                         <% } %>
 
-                            <br>
-                            <jsp:useBean id="contador" class="es.tew.Counter" scope="application"/>
-                            <jsp:getProperty property="incrementedValue" name="contador"/>
+                          
     </body>
     <html>
