@@ -10,7 +10,7 @@
         <h1>Hola <%=request.getParameter("NombreUsuario")%>!</h1>
         <br>
         <% } %>
-            <h1>Bienvenido a mi primera página web!</h1>
+            <h1>Bienvenido a mi primera página web! </h1>
 </body>
 
 
