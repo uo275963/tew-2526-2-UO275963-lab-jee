@@ -25,6 +25,20 @@
                 <f:facet name="header">Email</f:facet>
                 #{alumno.email}
             </h:column>
+            <h:column>
+                <f:facet name="header">Baja</f:facet>
+                <h:commandLink action="#{beanAlumnos.baja}" value="BAJA">
+                    <f:setPropertyActionListener target="#{beanAlumnos.alumno}" 
+                                                  value="#{alumno}"/>
+                </h:commandLink>
+            </h:column>
+            <h:column>
+                <f:facet name="header">Edición</f:facet>
+                <h:commandLink action="editar" value="EDITAR">
+                    <f:setPropertyActionListener target="#{beanAlumnos.alumno}" 
+                                                  value="#{alumno}"/>
+                </h:commandLink>
+            </h:column>
         </h:dataTable>
         <br/>
         <h:commandLink value="Volver al inicio" action="index"/>
