@@ -22,6 +22,18 @@
         </navigation-case>
     </navigation-rule>
 
+
+    <!-- Regla de navegación desde formulario.xhtml -->
+    <navigation-rule>
+        <from-view-id>/formulario.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{beanAlumnos.salva}</from-action>
+            <from-outcome>exito</from-outcome>
+            <to-view-id>/listado.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
     <!-- Regla de navegación global para errores -->
     <navigation-rule>
         <from-view-id>*</from-view-id>

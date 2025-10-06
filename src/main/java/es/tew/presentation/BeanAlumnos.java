@@ -6,6 +6,7 @@ import java.util.List;
 import es.tew.business.AlumnoService;
 import es.tew.infrastructure.ServiceFactory;
 import es.tew.model.Alumno;
+import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
 
@@ -18,6 +19,12 @@ public class BeanAlumnos implements Serializable {
     private final AlumnoService alumnoService = ServiceFactory.getAlumnoService();
     private List<Alumno> alumnos;
     private Alumno alumno;
+
+     @PostConstruct
+    public void init() {
+        // Inicializa alumno cuando se crea el bean
+        alumno = new Alumno();
+    }
     
     public void iniciaAlumno() {
         alumno = new Alumno();

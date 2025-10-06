@@ -9,6 +9,9 @@
     <h1>Gestión de Alumnos</h1>
     <h:form>
         <h:commandLink value="Listado de alumnos" action="#{beanAlumnos.listado}"/>
+        <br/><br/>
+        <h:commandLink value="Alta de alumno" action="alta" 
+                       actionListener="#{beanAlumnos.iniciaAlumno}"/>
     </h:form>
 </h:body>
 </html>
