@@ -24,7 +24,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ListarAlumnos extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        AlumnoDAO service = ServiceFactory.getAlumnoService();
+        AlumnoService service = ServiceFactory.getAlumnoService();
         List<Alumno> alumnos = service.getAlumnos();
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
