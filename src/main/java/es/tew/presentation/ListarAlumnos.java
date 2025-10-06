@@ -13,6 +13,7 @@ import java.util.List;
 import es.tew.business.AlumnoService;
 import es.tew.infrastructure.ServiceFactory;
 import es.tew.model.Alumno;
+import es.tew.persistence.*;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -23,7 +24,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ListarAlumnos extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        AlumnoService service = ServiceFactory.getAlumnoService();
+        AlumnoDAO service = ServiceFactory.getAlumnoService();
         List<Alumno> alumnos = service.getAlumnos();
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html");
