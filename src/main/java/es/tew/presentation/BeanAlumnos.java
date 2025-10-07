@@ -8,6 +8,8 @@ import es.tew.infrastructure.ServiceFactory;
 import es.tew.model.Alumno;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.context.FacesContext;
+import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
 @Named("beanAlumnos")
@@ -20,12 +22,11 @@ public class BeanAlumnos implements Serializable {
     private List<Alumno> alumnos;
     private Alumno alumno;
 
-     @PostConstruct
-    public void init() {
-        // Inicializa alumno cuando se crea el bean
-        alumno = new Alumno();
-    }
+    @Inject
+    private BeanError beanError;
+
     
+    @PostConstruct
     public void iniciaAlumno() {
         alumno = new Alumno();
     }
@@ -36,6 +37,13 @@ public class BeanAlumnos implements Serializable {
             return "exito";
         } catch (Exception e) {
             e.printStackTrace();
+            String vistaOrigen = FacesContext.getCurrentInstance().getViewRoot().getViewId();
+            beanError.setError(
+                vistaOrigen, 
+                "beanAlumnos.listado()", 
+                this.getClass().getSimpleName(), 
+                e.getMessage()
+            );
             return "error";
         }
     }
@@ -50,6 +58,13 @@ public class BeanAlumnos implements Serializable {
             return listado();
         } catch (Exception e) {
             e.printStackTrace();
+            String vistaOrigen = FacesContext.getCurrentInstance().getViewRoot().getViewId();
+            beanError.setError(
+                vistaOrigen, 
+                "beanAlumnos.salva()", 
+                this.getClass().getSimpleName(), 
+                e.getMessage()
+            );
             return "error";
         }
     }
@@ -60,6 +75,13 @@ public class BeanAlumnos implements Serializable {
             return listado();
         } catch (Exception e) {
             e.printStackTrace();
+            String vistaOrigen = FacesContext.getCurrentInstance().getViewRoot().getViewId();
+            beanError.setError(
+                vistaOrigen, 
+                "beanAlumnos.baja()", 
+                this.getClass().getSimpleName(), 
+                e.getMessage()
+            );
             return "error";
         }
     }
