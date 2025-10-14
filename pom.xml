@@ -115,6 +115,13 @@
                 <version>2.7.2</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.primefaces</groupId>
+                <artifactId>primefaces</artifactId>
+                <version>14.0.0</version>
+                <classifier>jakarta</classifier>
+            </dependency>
+
         <!-- Import the CDI API, we use provided scope as the API is included in WildFly / JBoss EAP -->
         <dependency>
             <groupId>jakarta.enterprise</groupId>

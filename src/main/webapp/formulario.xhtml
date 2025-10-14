@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 <h:head>
     <title>Alta de alumnos</title>
 </h:head>
 <h:body>
     <h1>Formulario de alumno</h1>
     <h:form>
-        <h:panelGrid columns="2">
+        <p:panelGrid columns="2">
             <h:outputLabel value="NOMBRE:" for="nombre"/>
-            <h:inputText value="#{beanAlumnos.alumno.nombre}" id="nombre"/>
+            <p:inputText value="#{beanAlumnos.alumno.nombre}" id="nombre"/>
             
             <h:outputLabel value="APELLIDOS:" for="apellidos"/>
-            <h:inputText value="#{beanAlumnos.alumno.apellidos}" id="apellidos"/>
+            <p:inputText value="#{beanAlumnos.alumno.apellidos}" id="apellidos"/>
             
             <h:outputLabel value="USERID:" for="idUser"/>
-            <h:inputText value="#{beanAlumnos.alumno.idUser}" id="idUser"/>
+            <p:inputText value="#{beanAlumnos.alumno.idUser}" id="idUser"/>
             
             <h:outputLabel value="EMAIL:" for="email"/>
-            <h:inputText value="#{beanAlumnos.alumno.email}" id="email"/>
-        </h:panelGrid>
+            <p:inputText value="#{beanAlumnos.alumno.email}" id="email"/>
+        </p:panelGrid>
         <br/>
-        <h:commandButton value="Salvar" action="#{beanAlumnos.salva}"/>
+        <p:commandButton value="Salvar" action="#{beanAlumnos.salva}"/>
     </h:form>
 </h:body>
 </html>
