@@ -3,27 +3,29 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-<h:head>
-    <title>Alta de alumnos</title>
-</h:head>
-<h:body>
-    <h1>Formulario de alumno</h1>
-    <h:form>
-        <p:panelGrid columns="2">
-            <h:outputLabel value="NOMBRE:" for="nombre"/>
-            <p:inputText value="#{beanAlumnos.alumno.nombre}" id="nombre"/>
-            
-            <h:outputLabel value="APELLIDOS:" for="apellidos"/>
-            <p:inputText value="#{beanAlumnos.alumno.apellidos}" id="apellidos"/>
-            
-            <h:outputLabel value="USERID:" for="idUser"/>
-            <p:inputText value="#{beanAlumnos.alumno.idUser}" id="idUser"/>
-            
-            <h:outputLabel value="EMAIL:" for="email"/>
-            <p:inputText value="#{beanAlumnos.alumno.email}" id="email"/>
-        </p:panelGrid>
-        <br/>
-        <p:commandButton value="Salvar" action="#{beanAlumnos.salva}"/>
-    </h:form>
-</h:body>
+<f:view locale="#{settings.locale}">
+    <h:head>
+        <title>#{msgs.formulario_titulo}</title>
+    </h:head>
+    <h:body>
+        <h1>#{msgs.formulario_titulo}</h1>
+        <h:form>
+            <p:panelGrid columns="2">
+                <h:outputLabel value="#{msgs.label_nombre}:" for="nombre"/>
+                <p:inputText value="#{beanAlumnos.alumno.nombre}" id="nombre"/>
+                
+                <h:outputLabel value="#{msgs.label_apellidos}:" for="apellidos"/>
+                <p:inputText value="#{beanAlumnos.alumno.apellidos}" id="apellidos"/>
+                
+                <h:outputLabel value="#{msgs.label_iduser}:" for="idUser"/>
+                <p:inputText value="#{beanAlumnos.alumno.idUser}" id="idUser"/>
+                
+                <h:outputLabel value="#{msgs.label_email}:" for="email"/>
+                <p:inputText value="#{beanAlumnos.alumno.email}" id="email"/>
+            </p:panelGrid>
+            <br/>
+            <p:commandButton value="#{msgs.btn_salvar}" action="#{beanAlumnos.salva}"/>
+        </h:form>
+    </h:body>
+</f:view>
 </html>
