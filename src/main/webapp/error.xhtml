@@ -11,8 +11,15 @@
     <p>Ha ocurrido un error al procesar su solicitud.</p>
     <p>Por favor, inténtelo de nuevo más tarde.</p>
     <br/>
+    <div>Vista origen: #{beanError.vistaOrigen}</div>
+    <div>Clase: #{beanError.clase}</div>
+    <div>Método: #{beanError.metodo}</div>
+    <div>Mensaje de error: #{beanError.mensajeError}</div>
+    <br/>
     <h:form>
         <h:commandLink value="Volver al inicio" action="index"/>
     </h:form>
 </h:body>
 </html>
+
+
