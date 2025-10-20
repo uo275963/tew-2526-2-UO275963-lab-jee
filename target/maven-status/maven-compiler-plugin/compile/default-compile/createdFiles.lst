@@ -6,6 +6,7 @@ es\tew\HolaMundoVistaServlet.class
 es\tew\business\AlumnoService.class
 es\tew\presentation\ListarAlumnos.class
 es\tew\Counter.class
+es\tew\model\User.class
 es\tew\model\Alumno.class
 es\tew\persistence\AlumnoDAOImpl.class
 es\tew\HolaMundoServlet.class

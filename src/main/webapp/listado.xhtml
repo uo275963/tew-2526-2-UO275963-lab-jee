@@ -8,29 +8,29 @@
     <ui:define name="subtitle">#{msgs.listado_titulo}</ui:define>
     
     <ui:define name="cuerpo">
-        <h1>#{msgs.listado_titulo}</h1>
+        <h1>#{msgs.titulo_listado}</h1>
         <h:form>
             <p:dataTable var="alumno" value="#{beanAlumnos.alumnos}" id="tablaListado">
                 <p:column>
-                    <f:facet name="header">#{msgs.listado_nombre}</f:facet>
+                    <f:facet name="header">#{msgs.label_nombre}</f:facet>
                     #{alumno.nombre}
                 </p:column>
                 <p:column>
-                    <f:facet name="header">#{msgs.listado_apellidos}</f:facet>
+                    <f:facet name="header">#{msgs.label_apellido}</f:facet>
                     #{alumno.apellidos}
                 </p:column>
                 <p:column>
-                    <f:facet name="header">#{msgs.listado_iduser}</f:facet>
+                    <f:facet name="header">#{msgs.label_idUser}</f:facet>
                     #{alumno.idUser}
                 </p:column>
                 <p:column>
-                    <f:facet name="header">#{msgs.listado_email}</f:facet>
+                    <f:facet name="header">#{msgs.label_email}</f:facet>
                     #{alumno.email}
                 </p:column>
                 <p:column>
-                    <f:facet name="header">#{msgs.listado_baja}</f:facet>
+                    <f:facet name="header">#{msgs.header_baja}</f:facet>
                     <p:commandLink action="#{beanAlumnos.baja}" 
-                                  value="#{msgs.listado_baja}" 
+                                  value="#{msgs.link_baja}" 
                                   immediate="true"
                                   update="tablaListado">
                         <f:setPropertyActionListener target="#{beanAlumnos.alumno}" 
@@ -38,8 +38,8 @@
                     </p:commandLink>
                 </p:column>
                 <p:column>
-                    <f:facet name="header">#{msgs.listado_edicion}</f:facet>
-                    <h:commandLink action="editar" value="#{msgs.listado_edicion}">
+                    <f:facet name="header">#{msgs.header_editar}</f:facet>
+                    <h:commandLink action="editar" value="#{msgs.link_editar}">
                         <f:setPropertyActionListener target="#{beanAlumnos.alumno}" 
                                                       value="#{alumno}"/>
                     </h:commandLink>

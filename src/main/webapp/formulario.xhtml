@@ -6,9 +6,9 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
 <f:view locale="#{settings.locale}">
     <ui:composition template="/templates/template.xhtml">
-        <ui:define name="subtitle">#{msgs.formulario_titulo}</ui:define>
+        <ui:define name="subtitle">#{msgs.titulo_formulario}</ui:define>
         <ui:define name="cuerpo">
-            <h1>#{msgs.formulario_titulo}</h1>
+            <h1>#{msgs.titulo_formulario}</h1>
             <h:form>
                 <p:panelGrid columns="3" id="grid">
                     <h:outputLabel value="#{msgs.label_nombre}:" for="nombre"/>
@@ -21,7 +21,7 @@
                     </p:inputText>
                     <p:message for="nombre"/>
                     
-                    <h:outputLabel value="#{msgs.label_apellidos}:" for="apellidos"/>
+                    <h:outputLabel value="#{msgs.label_apellido}:" for="apellidos"/>
                     <p:inputText value="#{beanAlumnos.alumno.apellidos}" 
                                  id="apellidos"
                                  required="true"
@@ -31,12 +31,12 @@
                     </p:inputText>
                     <p:message for="apellidos"/>
                     
-                    <h:outputLabel value="#{msgs.label_iduser}:" for="idUser"/>
+                    <h:outputLabel value="#{msgs.label_idUser}:" for="idUser"/>
                     <p:inputText value="#{beanAlumnos.alumno.idUser}" 
                                  id="idUser"
                                  required="true"
-                                 validatorMessage="#{msgs.formulario_validator_iduser}"
-                                 requiredMessage="#{msgs.formulario_required_iduser}">
+                                 validatorMessage="#{msgs.formulario_validator_idUser}"
+                                 requiredMessage="#{msgs.formulario_required_idUser}">
                         <f:validateLength minimum="5" maximum="8"/>
                     </p:inputText>
                     <p:message for="idUser"/>
