@@ -21,14 +21,39 @@ public class BeanAlumnos implements Serializable {
     private final AlumnoService alumnoService = ServiceFactory.getAlumnoService();
     private List<Alumno> alumnos;
     private Alumno alumno;
-
+    
     @Inject
     private BeanError beanError;
-
     
     @PostConstruct
+    public void init() {
+        alumno = new Alumno();
+        // Inicializar la lista de alumnos para que la tabla se muestre correctamente
+        try {
+            alumnos = alumnoService.getAlumnos();
+        } catch (Exception e) {
+            // Si falla, la lista quedará vacía
+            e.printStackTrace();
+        }
+    }
+    
     public void iniciaAlumno() {
         alumno = new Alumno();
+    }
+    
+    private void registrarError(Exception e) {
+        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+        String metodo = stackTrace[2].getMethodName() + "()";
+        
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+        String vistaOrigen = facesContext.getViewRoot().getViewId();
+        
+        beanError.setError(
+            vistaOrigen,
+            this.getClass().getSimpleName(),
+            metodo,
+            e.getMessage() != null ? e.getMessage() : "Error en la operación: " + e.getClass().getSimpleName()
+        );
     }
     
     public String listado() {
@@ -37,13 +62,7 @@ public class BeanAlumnos implements Serializable {
             return "exito";
         } catch (Exception e) {
             e.printStackTrace();
-            String vistaOrigen = FacesContext.getCurrentInstance().getViewRoot().getViewId();
-            beanError.setError(
-                vistaOrigen, 
-                "beanAlumnos.listado()", 
-                this.getClass().getSimpleName(), 
-                e.getMessage()
-            );
+            registrarError(e);
             return "error";
         }
     }
@@ -58,13 +77,7 @@ public class BeanAlumnos implements Serializable {
             return listado();
         } catch (Exception e) {
             e.printStackTrace();
-            String vistaOrigen = FacesContext.getCurrentInstance().getViewRoot().getViewId();
-            beanError.setError(
-                vistaOrigen, 
-                "beanAlumnos.salva()", 
-                this.getClass().getSimpleName(), 
-                e.getMessage()
-            );
+            registrarError(e);
             return "error";
         }
     }
@@ -75,13 +88,7 @@ public class BeanAlumnos implements Serializable {
             return listado();
         } catch (Exception e) {
             e.printStackTrace();
-            String vistaOrigen = FacesContext.getCurrentInstance().getViewRoot().getViewId();
-            beanError.setError(
-                vistaOrigen, 
-                "beanAlumnos.baja()", 
-                this.getClass().getSimpleName(), 
-                e.getMessage()
-            );
+            registrarError(e);
             return "error";
         }
     }
