@@ -11,6 +11,7 @@
         <h1>#{msgs.listado_titulo}</h1>
         <h:form>
             <p:dataTable var="alumno" value="#{beanAlumnos.alumnos}" id="tablaListado">
+                <!-- columnas igual que antes -->
                 <p:column>
                     <f:facet name="header">#{msgs.listado_nombre}</f:facet>
                     #{alumno.nombre}
@@ -43,5 +44,6 @@
                 </p:column>
             </p:dataTable>
         </h:form>
+        <ui:include src="/snippets/pie.xhtml"/>
     </ui:define>
 </ui:composition>

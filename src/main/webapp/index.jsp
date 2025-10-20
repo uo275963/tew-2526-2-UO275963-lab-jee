@@ -1,14 +1,25 @@
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:p="http://primefaces.org/ui"
-                template="/templates/template.xhtml">
-    
-    <ui:define name="subtitle">Home</ui:define>
-    
-    <ui:define name="cuerpo">
-        <h1>Bienvenido a Gestioneitor</h1>
-        <p>Utiliza el menú superior para navegar por la aplicación.</p>
-    </ui:define>
-</ui:composition>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; utf-8">
+    <title>Hola Mundo!!</title>
+</head>
+
+<body>
+    <% if (request.getParameter("NombreUsuario") !=null) { %>
+        <h1>Hola <%=request.getParameter("NombreUsuario")%>!</h1>
+        <br>
+        <% } %>
+            <h1>Bienvenido a mi primera página web! </h1>
+</body>
+
+
+<br>
+<%@ page language="java" import="es.tew.Counter"%> 
+
+<jsp:useBean id="contador" class="es.tew.Counter" scope="application"/>
+<jsp:getProperty property="incrementedValue" name="contador"/>
+<%=contador%> visitas
+
+
+</html>

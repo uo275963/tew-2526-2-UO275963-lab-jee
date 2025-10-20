@@ -1,33 +1,15 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
-<f:view locale="#{settings.locale}">
-    <h:head>
-        <title>Gestioneitor - Página Principal</title>
-    </h:head>
-    <h:body>
-        <h1>Gestión de Alumnos</h1>
-        <h:form>
-            <p:menubar>
-                <p:menuitem value="Gestioneitor"></p:menuitem>
-                <p:submenu label="#{msgs.menu_gestion}">
-                    <p:menuitem value="#{msgs.menu_alta}" action="alta" 
-                               actionListener="#{beanAlumnos.iniciaAlumno}"></p:menuitem>
-                    <p:menuitem value="#{msgs.menu_listado}" 
-                               action="#{beanAlumnos.listado}"></p:menuitem>
-                </p:submenu>
-                <f:facet name="options">
-                    <h:commandLink value="#{msgs.enlaceIdiomaES}" 
-                                  actionListener="#{settings.setSpanish}">
-                    </h:commandLink>
-                    <h:commandLink value="#{msgs.enlaceIdiomaEN}" 
-                                  actionListener="#{settings.setEnglish}">
-                    </h:commandLink>
-                </f:facet>
-            </p:menubar>
-        </h:form>
-    </h:body>
-</f:view>
-</html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/templates/template.xhtml">
+    
+    <ui:define name="subtitle">Home</ui:define>
+    
+    <ui:define name="cuerpo">
+        <h1>Bienvenido a Gestioneitor</h1>
+        <p>Utiliza el menú superior para navegar por la aplicación.</p>
+        <ui:include src="/snippets/pie.xhtml"/>
+    </ui:define>
+</ui:composition>
