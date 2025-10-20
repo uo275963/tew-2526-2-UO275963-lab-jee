@@ -11,21 +11,21 @@
    <!-- Write your navigation rules here. You are encouraged to use CDI for
       creating @Named managed beans. -->
 
-      <!-- Regla de navegación desde index.xhtml -->
+      <!-- Regla de navegación desde cualquier vista -->
     <navigation-rule>
-        <from-view-id>/index.xhtml</from-view-id>
-        <navigation-case>
-            <from-action>#{beanAlumnos.listado}</from-action>
-            <from-outcome>exito</from-outcome>
-            <to-view-id>/listado.xhtml</to-view-id>
-            <redirect/>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>alta</from-outcome>   
-            <to-view-id>/formulario.xhtml</to-view-id>
-            <redirect/>
-            </navigation-case> 
-    </navigation-rule>
+    <from-view-id>*</from-view-id>
+    <navigation-case>
+        <from-action>#{beanAlumnos.listado}</from-action>
+        <from-outcome>exito</from-outcome>
+        <to-view-id>/listado.xhtml</to-view-id>
+        <redirect/>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>alta</from-outcome>
+        <to-view-id>/formulario.xhtml</to-view-id>
+        <redirect/>
+    </navigation-case>
+</navigation-rule>
 
    
 
@@ -66,6 +66,8 @@
             <to-view-id>/error.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+
+    
 
     <application>
     <resource-bundle>
