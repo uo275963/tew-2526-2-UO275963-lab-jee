@@ -82,6 +82,16 @@
         </navigation-case>
     </navigation-rule>
 
+    <!-- Regla de navegación a página privada -->
+    <navigation-rule>
+        <from-view-id>*</from-view-id>
+        <navigation-case>
+            <from-outcome>privada</from-outcome>
+            <to-view-id>/restricted/privada.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
     <!-- Configuración de i18n -->
     <application>
         <resource-bundle>
