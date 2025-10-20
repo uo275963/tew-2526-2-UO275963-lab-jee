@@ -11,7 +11,6 @@
         <h1>#{msgs.listado_titulo}</h1>
         <h:form>
             <p:dataTable var="alumno" value="#{beanAlumnos.alumnos}" id="tablaListado">
-                <!-- columnas igual que antes -->
                 <p:column>
                     <f:facet name="header">#{msgs.listado_nombre}</f:facet>
                     #{alumno.nombre}
@@ -30,10 +29,13 @@
                 </p:column>
                 <p:column>
                     <f:facet name="header">#{msgs.listado_baja}</f:facet>
-                    <h:commandLink action="#{beanAlumnos.baja}" value="#{msgs.listado_baja}">
+                    <p:commandLink action="#{beanAlumnos.baja}" 
+                                  value="#{msgs.listado_baja}" 
+                                  immediate="true"
+                                  update="tablaListado">
                         <f:setPropertyActionListener target="#{beanAlumnos.alumno}" 
                                                       value="#{alumno}"/>
-                    </h:commandLink>
+                    </p:commandLink>
                 </p:column>
                 <p:column>
                     <f:facet name="header">#{msgs.listado_edicion}</f:facet>

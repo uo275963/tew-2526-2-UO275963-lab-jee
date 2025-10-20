@@ -53,8 +53,9 @@
                 </p:panelGrid>
                 <br/>
                 <p:commandButton value="#{msgs.btn_salvar}" 
-                                action="#{beanAlumnos.salva}" 
-                                ajax="false"/>
+                                action="#{beanAlumnos.salva}"
+                                process="@form"
+                                update="grid"/>
             </h:form>
             <ui:include src="/snippets/pie.xhtml"/>
         </ui:define>
