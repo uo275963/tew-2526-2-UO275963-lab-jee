@@ -81,6 +81,7 @@
     </navigation-rule>
 
     <!-- Regla de navegación global para errores -->
+    <!--
     <navigation-rule>
         <from-view-id>*</from-view-id>
         <navigation-case>
@@ -88,6 +89,7 @@
             <to-view-id>/error.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    -->
 
     <!-- Regla de navegación a página privada -->
     <navigation-rule>

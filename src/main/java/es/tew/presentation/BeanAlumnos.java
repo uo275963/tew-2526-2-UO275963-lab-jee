@@ -50,8 +50,8 @@ public class BeanAlumnos implements Serializable {
         
         beanError.setError(
             vistaOrigen,
-            this.getClass().getSimpleName(),
             metodo,
+            this.getClass().getSimpleName(),
             e.getMessage() != null ? e.getMessage() : "Error en la operación: " + e.getClass().getSimpleName()
         );
     }

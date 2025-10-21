@@ -32,7 +32,7 @@
                     <p:commandLink action="#{beanAlumnos.baja}" 
                                   value="#{msgs.link_baja}" 
                                   immediate="true"
-                                  update="tablaListado">
+                                  update="tablaListado errorPanel">
                         <f:setPropertyActionListener target="#{beanAlumnos.alumno}" 
                                                       value="#{alumno}"/>
                     </p:commandLink>
@@ -47,5 +47,7 @@
             </p:dataTable>
         </h:form>
         <ui:include src="/snippets/pie.xhtml"/>
+        <ui:include src="/snippets/errorPanel.xhtml"/>
+
     </ui:define>
 </ui:composition>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <h:body>
+        <div>
+            <p:outputPanel id="errorContent">
+                <p:panel id="errorDetails" header="Error del Sistema" styleClass="ui-panel-error" toggleable="true" collapsed="true">
+                    <h:panelGrid columns="2" style="width: 100%;" id="errorPanel">
+                        <p:outputLabel value="Vista de origen: " style="font-weight: bold;"/>
+                        <p:outputLabel value="#{beanError.vistaOrigen}" id="vistaOrigen"/>
+                        
+                        <p:outputLabel value="Clase: " style="font-weight: bold;"/>
+                        <p:outputLabel value="#{beanError.clase}" id="clase"/>
+                        
+                        <p:outputLabel value="Método: " style="font-weight: bold;"/>
+                        <p:outputLabel value="#{beanError.metodo}" id="metodo"/>
+                        
+                        <p:outputLabel value="Mensaje de error: " style="font-weight: bold;"/>
+                        <p:outputLabel value="#{beanError.mensajeError}" id="mensajeError" style="color:red;"/>
+                    </h:panelGrid>
+                </p:panel>
+            </p:outputPanel>
+        </div>
+    </h:body>
+</html>

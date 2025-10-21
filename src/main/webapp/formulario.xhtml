@@ -55,9 +55,11 @@
                 <p:commandButton value="#{msgs.btn_salvar}" 
                                 action="#{beanAlumnos.salva}"
                                 process="@form"
-                                update="grid"/>
+                                update="grid errorPanel"/>
             </h:form>
             <ui:include src="/snippets/pie.xhtml"/>
+            <ui:include src="/snippets/errorPanel.xhtml"/>
+
         </ui:define>
     </ui:composition>
 </f:view>
