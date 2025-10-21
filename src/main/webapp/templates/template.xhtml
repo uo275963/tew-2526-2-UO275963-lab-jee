@@ -12,12 +12,12 @@
     <h:body>
         <h:form>
             <p:menubar>
-                <p:menuitem value="Gestioneitor"></p:menuitem>
+                <p:menuitem value="Gestioneitor" action="index"></p:menuitem>
                 <p:submenu label="#{msgs.menu_gestion}">
                     <p:menuitem value="#{msgs.menu_alta}" action="alta"
                                actionListener="#{beanAlumnos.iniciaAlumno}"></p:menuitem>
                     <p:menuitem value="#{msgs.menu_listado}"
-                               action="#{beanAlumnos.listado}"></p:menuitem>
+                               action="listado"></p:menuitem>
                 </p:submenu>
                 <p:menuitem value="#{msgs.menu_restringido}" action="privada"></p:menuitem>
                 <p:menuitem value="#{msgs.menu_login}" action="login"

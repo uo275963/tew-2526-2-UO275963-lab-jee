@@ -9,18 +9,25 @@
     <navigation-rule>
         <from-view-id>*</from-view-id>
         <navigation-case>
-            <from-action>#{beanAlumnos.listado}</from-action>
-            <from-outcome>exito</from-outcome>
+            <from-outcome>listado</from-outcome>
             <if>#{beanLogin.isLogged()}</if>
             <to-view-id>/listado.xhtml</to-view-id>
-            <else><to-view-id>/login.xhtml</to-view-id></else>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>listado</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>alta</from-outcome>
             <if>#{beanLogin.isLogged()}</if>
             <to-view-id>/formulario.xhtml</to-view-id>
-            <else><to-view-id>/login.xhtml</to-view-id></else>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>alta</from-outcome>
+            <to-view-id>/login.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
     </navigation-rule>
@@ -98,6 +105,6 @@
             <base-name>messages</base-name>
             <var>msgs</var>
         </resource-bundle>
-    </application>
+    </application>  
 
 </faces-config>
