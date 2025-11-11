@@ -1,6 +1,7 @@
 package es.tew.model;
+import java.io.Serializable;
 
-public class Alumno {
+public class Alumno implements Serializable {
     private int id;
     private String idUser;
     private String email;
